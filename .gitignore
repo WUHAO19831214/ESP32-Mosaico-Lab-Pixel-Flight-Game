@@ -1,0 +1,13 @@
+# Local pairing & runtime artifacts
+bridge.local.json
+app/config.json
+.runtime/
+refs/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Test & device evidence logs (generated locally)
+evidence/*.json
+evidence/*.log
+evidence/*.png

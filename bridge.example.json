@@ -1,0 +1,6 @@
+{
+  "device_host": "192.168.1.100",
+  "token": "REPLACE_WITH_64_HEX_RANDOM_TOKEN_FROM_CONFIGURE_PY",
+  "port": 8780,
+  "route_mode": "auto"
+}

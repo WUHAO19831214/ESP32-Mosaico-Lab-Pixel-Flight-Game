@@ -1,0 +1,13 @@
+--- a/app/scripts/receiver.lua
++++ b/app/scripts/receiver.lua
+@@ -137,5 +137,9 @@
+   end
+   return {status=400,json={ok=false}}
+ end)
++
++-- Optional zero-slot Pixel Flight transport (uses its own token, queues, and /pixel_flight/* routes).
++local pf_ok, pf_ext = pcall(dofile, storage.join_path(storage.get_root_dir(), 'apps', 'pixel_flight', 'scripts', 'transport.lua'))
++if pf_ok then local att_ok, why = pcall(pf_ext.attach, app); if not att_ok then print('[pixel_flight] transport unavailable: ' .. tostring(why)) end end
+ 
+ print("[minna_nihongo] receiver ready")
+ app:serve_forever()
